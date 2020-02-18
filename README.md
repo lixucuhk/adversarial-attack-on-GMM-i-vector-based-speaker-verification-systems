@@ -14,31 +14,31 @@ This repository provides the coding implementation of the paper:
 
 ### White box attacks
 
-1. FAR (%) of the GMM i-vector systems under white box attack with different perturbation degrees (\epsilon).
+1. FAR (%) of the GMM i-vector systems under white box attack with different perturbation degrees ($\epsilon$).
 
-|           | \epsilon=0 | \epsilon=0.3 | \epsilon=1.0 | \epsilon=5.0 | \epsilon=10.0 |
+|           | $\epsilon$=0 | $\epsilon$=0.3 | $\epsilon$=1.0 | $\epsilon$=5.0 | $\epsilon$=10.0 |
 | --------- | ------------ | -------------- | -------------- | -------------- | --------------- |
 | MFCC-ivec |     7.20     |      82.91     |      96.87     |      18.14     |      16.65      |
 | LPMS-ivec |    10.24     |      96.78     |      99.99     |      99.64     |      69.95      |
 
-2. EER (%) of the GMM i-vector systems under white box attack with different perturbation degrees (&epsilon).
+2. EER (%) of the GMM i-vector systems under white box attack with different perturbation degrees ($\epsilon$).
 
-|           | \epsilon=0 | \epsilon=0.3 | \epsilon=1.0 | \epsilon=5.0 | \epsilon=10.0 |
+|           | $\epsilon$=0 | $\epsilon$=0.3 | $\epsilon$=1.0 | $\epsilon$=5.0 | $\epsilon$=10.0 |
 | --------- | ------------ | -------------- | -------------- | -------------- | --------------- |
 | MFCC-ivec |     7.20     |      81.78     |      97.64     |      50.25     |      50.72      |
 | LPMS-ivec |    10.24     |      94.04     |      99.95     |      99.77     |      88.60      |
 
 ### Black box attacks
 
-1. EER (%) of the target systems under black box attack with different perturbation degrees (\epsilon).
+1. EER (%) of the target systems under black box attack with different perturbation degrees $\epsilon$.
 
-|                             | \epsilon=0 | \epsilon=0.3 | \epsilon=1.0 | \epsilon=5.0 | \epsilon=10.0 | \epsilon=20.0 | \epsilon=30.0 | \epsilon=50.0 |
+|                             | $\epsilon$=0 | $\epsilon$=0.3 | $\epsilon$=1.0 | $\epsilon$=5.0 | $\epsilon$=10.0 | $\epsilon$=20.0 | $\epsilon$=30.0 | $\epsilon$=50.0 |
 | --------------------------- | ------------ | -------------- | -------------- | -------------- | --------------- | --------------- | --------------- | --------------- |
 | LPMS-ivec attacks MFCC-ivec |     7.20     |       8.83     |      13.82     |      50.02     |      69.04      |      74.62      |      74.59     |      63.24      |
 | MFCC-ivec attacks MFCC-xvec |     6.62     |       8.52     |      14.06     |      57.43     |      74.32      |      60.85      |      54.07     |      51.34      |
 | LPMS-ivec attacks MFCC-xvec |     6.62     |       7.42     |       9.49     |      25.47     |      37.51      |      43.89      |      48.48     |      48.39      |
 
-2. FAR (%) of the target systems under black box attack with different perturbation degrees (\epsilon).
+2. FAR (%) of the target systems under black box attack with different perturbation degrees ($\epsilon$).
 ![](./results-figures/black_box_far.png)
 
 ## Dependencies
