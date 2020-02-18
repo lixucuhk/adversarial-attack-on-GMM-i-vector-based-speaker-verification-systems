@@ -1,0 +1,11 @@
+tqdm
+numpy
+librosa
+matplotlib
+tensorboardX
+scipy
+soundfile
+json
+codecs
+concurrent
+functools
