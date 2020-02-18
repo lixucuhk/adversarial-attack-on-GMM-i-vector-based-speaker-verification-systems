@@ -14,31 +14,31 @@ This repository provides the coding implementation of the paper:
 
 ### White box attacks
 
-1. FAR (%) of the GMM i-vector systems under white box attack with different perturbation degrees ($\epsilon$).
+1. FAR (%) of the GMM i-vector systems under white box attack with different perturbation degrees (\epsilon).
 
-|           | $\epsilon=0$ | $\epsilon=0.3$ | $\epsilon=1.0$ | $\epsilon=5.0$ | $\epsilon=10.0$ |
+|           | \epsilon=0 | \epsilon=0.3 | \epsilon=1.0 | \epsilon=5.0 | \epsilon=10.0 |
 | --------- | ------------ | -------------- | -------------- | -------------- | --------------- |
 | MFCC-ivec |     7.20     |      82.91     |      96.87     |      18.14     |      16.65      |
 | LPMS-ivec |    10.24     |      96.78     |      99.99     |      99.64     |      69.95      |
 
-2. EER (%) of the GMM i-vector systems under white box attack with different perturbation degrees ($\epsilon$).
+2. EER (%) of the GMM i-vector systems under white box attack with different perturbation degrees (&epsilon).
 
-|           | $\epsilon=0$ | $\epsilon=0.3$ | $\epsilon=1.0$ | $\epsilon=5.0$ | $\epsilon=10.0$ |
+|           | \epsilon=0 | \epsilon=0.3 | \epsilon=1.0 | \epsilon=5.0 | \epsilon=10.0 |
 | --------- | ------------ | -------------- | -------------- | -------------- | --------------- |
 | MFCC-ivec |     7.20     |      81.78     |      97.64     |      50.25     |      50.72      |
 | LPMS-ivec |    10.24     |      94.04     |      99.95     |      99.77     |      88.60      |
 
 ### Black box attacks
 
-1. EER (%) of the target systems under black box attack with different perturbation degrees ($\epsilon$).
+1. EER (%) of the target systems under black box attack with different perturbation degrees (\epsilon).
 
-|                             | $\epsilon=0$ | $\epsilon=0.3$ | $\epsilon=1.0$ | $\epsilon=5.0$ | $\epsilon=10.0$ | $\epsilon=20.0$ | $\epsilon=30.0$ | $\epsilon=50.0$ |
+|                             | \epsilon=0 | \epsilon=0.3 | \epsilon=1.0 | \epsilon=5.0 | \epsilon=10.0 | \epsilon=20.0 | \epsilon=30.0 | \epsilon=50.0 |
 | --------------------------- | ------------ | -------------- | -------------- | -------------- | --------------- | --------------- | --------------- | --------------- |
 | LPMS-ivec attacks MFCC-ivec |     7.20     |       8.83     |      13.82     |      50.02     |      69.04      |      74.62      |      74.59     |      63.24      |
 | MFCC-ivec attacks MFCC-xvec |     6.62     |       8.52     |      14.06     |      57.43     |      74.32      |      60.85      |      54.07     |      51.34      |
 | LPMS-ivec attacks MFCC-xvec |     6.62     |       7.42     |       9.49     |      25.47     |      37.51      |      43.89      |      48.48     |      48.39      |
 
-2. FAR (%) of the target systems under black box attack with different perturbation degrees ($\epsilon$).
+2. FAR (%) of the target systems under black box attack with different perturbation degrees (\epsilon).
 ![](./results-figures/black_box_far.png)
 
 ## Dependencies
@@ -54,8 +54,8 @@ This repository provides the coding implementation of the paper:
 
 2. Kaldi-io-for-python
 
-    [kaldi-io-for-python](https://github.com/vesis84/kaldi-io-for-python) is used for reading data of `ark,scp` format in kaldi via python codes.
-    See README.md of [kaldi-io-for-python](https://github.com/vesis84/kaldi-io-for-python/blob/master/README.md) for installation.
+    kaldi-io-for-python is used for reading data of `ark,scp` format in kaldi via python codes.
+    See `README.md` in [kaldi-io-for-python](https://github.com/vesis84/kaldi-io-for-python) for installation.
 
 ## Prepare Dataset
 
@@ -66,11 +66,12 @@ This repository provides the coding implementation of the paper:
 
 
 ## Train ASV models
-- In our experiments, three ASV models are well trained: Mel-frequency cepstral coefficient (MFCC) based GMM i-vector system (`MFCC-ivec`), log power magnitude spectrum (LPMS) based GMM i-vector system (`LPMS-ivec`) and MFCC based x-vector system (`MFCC-xvec`). You can execute the `run.sh` script in the directory of `i-vector-mfcc`, `i-vector-lpms` and `x-vector-mfcc` to train `MFCC-ivec`, `LPMS-ivec` and `MFCC-xvec`, respectively. These codes were modified from [Kaldi scripts](https://github.com/kaldi-asr/kaldi/tree/master/egs/voxceleb). You need to go into the correponding directory, and run the `run.sh`. For e.g.,
-```bash
-cd i-vector-mfcc
-./run.sh
-```
+- In our experiments, three ASV models are well trained: Mel-frequency cepstral coefficient (MFCC) based GMM i-vector system (`MFCC-ivec`), log power magnitude spectrum (LPMS) based GMM i-vector system (`LPMS-ivec`) and MFCC based x-vector system (`MFCC-xvec`). 
+- You can execute the `run.sh` script in the directory of `i-vector-mfcc`, `i-vector-lpms` and `x-vector-mfcc` to train `MFCC-ivec`, `LPMS-ivec` and `MFCC-xvec`, respectively. These codes were modified from [Kaldi scripts](https://github.com/kaldi-asr/kaldi/tree/master/egs/voxceleb). You need to go into the correponding directory, and run the `run.sh`. For e.g.,
+  ```bash
+  cd i-vector-mfcc
+  ./run.sh
+  ```
 
 ## Perform Adversarial Attacks
 - According to the attack configuration, two white box attacks are performed on `MFCC-ivec` and `LPMS-ivec`, respectively. Three black box attack settings are: `LPMS-ivec attacks MFCC-ivec`, `MFCC-ivec attacks MFCC-xvec` and `LPMS-ivec attacks MFCC-xvec`.
@@ -81,22 +82,22 @@ cd i-vector-mfcc
 
 
 - To generate adversarial samples from `LPMS-ivec` and perform the white box attack on it, run:
-```bash
-cd i-vector-lpms
-./perform_adv_attacks.sh
-```
+  ```bash
+  cd i-vector-lpms
+  ./perform_adv_attacks.sh
+  ```
 
 - To generate adversarial samples from `MFCC-ivec`, perform the white box attack on it and black box attack of `LPMS-ivec attacks MFCC-ivec`, run:
-```bash
-cd i-vector-mfcc
-./perform_adv_attacks.sh
-```
+  ```bash
+  cd i-vector-mfcc
+  ./perform_adv_attacks.sh
+  ```
 
 - To perform black box attack of `MFCC-ivec attacks MFCC-xvec` and `LPMS-ivec attacks MFCC-xvec`, run:
-```bash
-cd x-vector-mfcc
-./spoofing_MFCC_xvec.sh
-```
+  ```bash
+  cd x-vector-mfcc
+  ./spoofing_MFCC_xvec.sh
+  ```
 
 ## Citation
 If the code is used in your research, please star our repo and cite our paper as follows:
