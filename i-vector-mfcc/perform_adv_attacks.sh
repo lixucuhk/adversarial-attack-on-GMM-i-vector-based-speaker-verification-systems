@@ -133,11 +133,11 @@ if [ $stage -le 5 ]; then
 				--enroll-ivectors exp/ivectors_voxceleb1_test/enrollivector.scp --trials data/voxceleb1_test/trials_adv \
 				--ivector-global-mean exp/ivectors_train/mean.vec || exit 1
 				
-	# compute EER
+	# compute EER (13.84%)
 	python3 local/evaluation_metric.py --trials data/voxceleb1_test/trials_adv \
 									--scores exp/lpms_ivec_adv_verification_scores_sigma${sigma} || exit 1
 
-	# given operation point, compute FAR and FRR.
+	# given operation point, compute FAR (17.03%) and FRR (11.15%).
 	operation_point=-3.5847
 	python3 local/evaluation_metric.py --trials data/voxceleb1_test/trials_adv \
 									--scores exp/lpms_ivec_adv_verification_scores_sigma${sigma} --threshold ${operation_point} || exit 1
