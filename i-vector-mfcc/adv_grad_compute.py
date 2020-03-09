@@ -105,9 +105,9 @@ rfile = open(trialsfile, 'r')
 with kaldi_io.open_or_fd(gradfilename, 'wb') as grad_f:
 	num_trials = 0
 	for line in rfile.readlines():
-		if num_trials < 10196:
-			num_trials += 1
-			continue
+# 		if num_trials < 10196:
+# 			num_trials += 1
+# 			continue
 		enrollid, testid, groundtruth = line.split()
 		print('enrollid %s, testid %s.' %(enrollid, testid))
 		# enrollindex = enrollkeys.index(enrollid)
